@@ -1,0 +1,9 @@
+#!/bin/sh
+
+declare -a options=(
+"us"
+"br"
+)
+map=$(printf '%s\n' "${options[@]}" | dmenu -i -l 2 -p "Keymap:")
+setxkbmap $map
+xmodmap -e 'keycode 66 = Escape' ; xmodmap -e 'clear lock' # Sets caps lock as ESC and deletes caps lock

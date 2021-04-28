@@ -1,0 +1,6 @@
+#!/bin/bash
+# Dependencies: hacksaw, shotgun
+
+selec=$(hacksaw)
+name=$(dmenu -p "Save_as:")
+shotgun -g "$selec" /home/billy/screenshots/$name.png # Directory in which the images will be saved
